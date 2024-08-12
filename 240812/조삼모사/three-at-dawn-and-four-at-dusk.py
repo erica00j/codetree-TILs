@@ -40,7 +40,7 @@ for i in range(len(morning)):
     answer.append(density(afternoon[i]))
 #answer = [8, 13, 13, 22, 2, 9]
 
-count = 10000000
+count = float("inf")
 for i in range(0,len(answer)-1,2):
     count = min(count, abs(answer[i]-answer[i+1]))
 print(count)
