@@ -34,13 +34,17 @@ for i in range(len(result)):
         if j==len(result[i]):
             break
         function.append(result[i][j])
-    answer = [str(function[0])]
+    answer = function[0]
     for k in range(1,len(function),2):
-        answer.append(str(function[k]))
-        answer.append(str(function[k+1]))
-    expression = ' '.join(answer)
-    a = eval(expression)
-    goal.append(a)
+        o = function[k]
+        n = function[k+1]
+        if o == '+':
+            answer += n
+        elif o == '-':
+            answer -= n
+        elif o == '*':
+            answer *= n
+    goal.append(answer)
 if min(goal) < -1000000000:
     print('-1000000000 ' + str(max(goal)))
 elif max(goal) > 1000000000:
