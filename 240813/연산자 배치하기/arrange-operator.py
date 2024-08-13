@@ -44,6 +44,6 @@ for i in range(len(result)):
 if min(goal) < -1000000000:
     print('-1000000000 ' + str(max(goal)))
 elif max(goal) > 1000000000:
-    print(str(min(goal)) + ' ' + str(max(goal)))
-else:
     print(str(min(goal))+' 1000000000')
+else:
+    print(str(min(goal)) + ' ' + str(max(goal)))
