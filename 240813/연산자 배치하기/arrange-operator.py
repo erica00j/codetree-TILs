@@ -27,30 +27,24 @@ backtrack_perm([])
 
 #계산하기
 goal = []
-for ops in result:
-    function = [str(number[0])]
-    for num, op in zip(number[1:],ops):
-        function.append(op)
-        function.append(str(num))
-    expression = ' '.join(function)
-    answer = eval(expression)
-    goal.append(answer)
-# for i in range(len(result)):
-#     function = []
-#     for j in range(len(number)):
-#         function.append(number[j])
-#         if j==len(result[i]):
-#             break
-#         function.append(result[i][j])
-#     answer = function[0]
-#     for k in range(1,len(function),2):
-#         o = function[k]
-#         n = function[k+1]
-#         if o == '+':
-#             answer += n
-#         elif o == '-':
-#             answer -= n
-#         elif o == '*':
-#             answer *= n
-#     goal.append(answer)
-print(str(min(goal))+' '+str(max(goal)))
+for i in range(len(result)):
+    function = []
+    for j in range(len(number)):
+        function.append(number[j])
+        if j==len(result[i]):
+            break
+        function.append(result[i][j])
+    answer = [str(function[0])]
+    for k in range(1,len(function),2):
+        answer.append(str(function[k]))
+        answer.append(str(function[k+1]))
+    expression = ' '.join(answer)
+    print(expression)
+    a = eval(expression)
+    goal.append(a)
+if min(goal) < -1000000000:
+    print('-1000000000 ' + str(max(goal)))
+elif max(goal) > 1000000000:
+    print(str(min(goal)) + ' ' + str(max(goal)))
+else:
+    print(str(min(goal))+' 1000000000')
