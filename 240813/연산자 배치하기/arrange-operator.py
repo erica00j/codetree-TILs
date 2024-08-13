@@ -39,7 +39,6 @@ for i in range(len(result)):
         answer.append(str(function[k]))
         answer.append(str(function[k+1]))
     expression = ' '.join(answer)
-    print(expression)
     a = eval(expression)
     goal.append(a)
 if min(goal) < -1000000000:
