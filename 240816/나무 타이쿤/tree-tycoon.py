@@ -34,7 +34,6 @@ for i in range(len(rule)):
         for k in range(n):
             if visited[j][k] == True:
                 result = go(j,k,cnt)
-    print(visited)
     visited = [[False] * n for _ in range(n)]
     for a, b in result:
         visited[a][b] = True
