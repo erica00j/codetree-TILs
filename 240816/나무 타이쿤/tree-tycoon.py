@@ -58,9 +58,6 @@ for i in range(len(rule)):
     visited = [[False] * n for _ in range(n)]
     for b,c in answer:
         visited[b][c] = True
-    print(graph)
-    print(visited)
-    print()
     cnt += 1
 
 amount = 0
